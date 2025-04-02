@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+</head>
+<body>
+   
+<script>
+    //Variavéis das Dificuldades
+
+    let númeroSecretoFacil = parseInt(Math.random() * 9 + 1);
+    
+
+    let númeroSecretoMedio = parseInt(Math.random() * 49 + 1);
+    
+
+    let númeroSecretoDificil = parseInt(Math.random() * 99 + 1);
+    
+
+    //Declarando váriaveis
+    let chute;
+    let tentativas = 0;
+
+    //Introdução ao Jogo de Advinhação
+
+alert ('Bem Vindo ao Nosso Jogo de Advinhação');
+
+alert('Escolha a dificuldade do jogo');
+
+    //Selecionar a Dificuldade 
+let dificuldade = prompt('1 Facil 2 Média 3 Dificil');
+
+    //Dificuldade Facil
+
+if (dificuldade == 1 || dificuldade == 'facil' || dificuldade== 'Facil' || dificuldade == 'fácil' || dificuldade == 'fácil'){
+    alert('Você Selecionou a Dificuldade Fácil');
+    console.log(`O número secreto é ${númeroSecretoFacil}`);
+
+    while (chute != númeroSecretoFacil) {
+
+        let chute = prompt('Escolha um número de 1 a 10');
+
+        if (chute == númeroSecretoFacil){
+            tentativas++;
+            alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+            break;
+        }
+        else if (chute > númeroSecretoFacil) {
+            alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+            tentativas++;
+        }
+        
+        else {
+            alert(`Tente novamente, o número secreto é maior que ${chute}`);
+            tentativas++;
+        }
+    }
+    
+}
+
+ //Dificuldade Médio
+
+  else if(dificuldade == 2 || dificuldade == 'media' || dificuldade== 'Media' || dificuldade == 'média' || dificuldade == 'Média'){
+    
+    alert('Você Selecionou a Dificuldade Média');
+    console.log(`O número secreto é ${númeroSecretoMedio}`);
+
+    while (chute != númeroSecretoMedio) {
+
+        let chute = prompt('Escolha um número de 1 a 50');
+
+        if (chute == númeroSecretoMedio){
+            tentativas++;
+            alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+            break;
+        }
+        else if (chute > númeroSecretoMedio) {
+            alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+            tentativas++;
+        }
+        
+        else {
+            alert(`Tente novamente, o número secreto é maior que ${chute}`);
+            tentativas++;
+        }
+    }
+    
+}
+
+ //Dificuldade Dificil
+
+ else if(dificuldade == 3 || dificuldade == 'dificil' || dificuldade== 'Dificil' || dificuldade == 'difícil' || dificuldade == 'Difícil'){
+    
+    alert('Você Selecionou a Dificuldade Difícil');
+    console.log(`O número secreto é ${númeroSecretoDificil}`);
+
+    while (chute != númeroSecretoDificil) {
+
+        let chute = prompt('Escolha um número de 1 a 100');
+
+        if (chute == númeroSecretoDificil){
+            tentativas++;
+            alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+            break;
+        }
+        else if (chute > númeroSecretoDificil) {
+            alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+            tentativas++;
+        }
+        
+        else {
+            alert(`Tente novamente, o número secreto é maior que ${chute}`);
+            tentativas++;
+        }
+    }
+    
+}
+
+
+</script>
+
+</body>
+</html>
