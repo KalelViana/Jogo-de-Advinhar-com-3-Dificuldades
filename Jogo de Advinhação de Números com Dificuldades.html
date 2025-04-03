@@ -9,112 +9,270 @@
     //Variavéis das Dificuldades
 
     let númeroSecretoFacil = parseInt(Math.random() * 9 + 1);
-    
-
     let númeroSecretoMedio = parseInt(Math.random() * 49 + 1);
-    
-
     let númeroSecretoDificil = parseInt(Math.random() * 99 + 1);
     
+    //Declarando a Função de Jogar Novamente
+    function jogarNovamente(){
 
-    //Declarando váriaveis
-    let chute;
-    let tentativas = 0;
+    //Ponto de Onde o Jogo retorna caso o Usúario queira jogar Novamente
 
-    //Introdução ao Jogo de Advinhação
-
-alert ('Bem Vindo ao Nosso Jogo de Advinhação');
-
-alert('Escolha a dificuldade do jogo');
-
-    //Selecionar a Dificuldade 
-let dificuldade = prompt('1 Facil 2 Média 3 Dificil');
+    let dificuldade = prompt('1 Facil 2 Média 3 Dificil');
 
     //Dificuldade Facil
 
 if (dificuldade == 1 || dificuldade == 'facil' || dificuldade== 'Facil' || dificuldade == 'fácil' || dificuldade == 'fácil'){
-    alert('Você Selecionou a Dificuldade Fácil');
-    console.log(`O número secreto é ${númeroSecretoFacil}`);
+alert('Você Selecionou a Dificuldade Fácil');
 
-    while (chute != númeroSecretoFacil) {
+console.log(`O número secreto é ${númeroSecretoFacil}`);
 
-        let chute = prompt('Escolha um número de 1 a 10');
+while (chute != númeroSecretoFacil) {
 
-        if (chute == númeroSecretoFacil){
-            tentativas++;
-            alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
-            break;
+    let chute = prompt('Escolha um número de 1 a 10');
+
+    if (chute == númeroSecretoFacil){
+        tentativas++;
+        alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+        let recomeçar = prompt('Deseja jogar Novamente?');
+        if(recomeçar == 'não' || recomeçar == 'Não' || recomeçar == 'nao' || recomeçar == 'Nao'){
+            alert('Obrigado por Jogar');
+            exit();
         }
-        else if (chute > númeroSecretoFacil) {
-            alert(`Tente Novamente, o número secreto é menor que ${chute}`);
-            tentativas++;
+    else if (recomeçar == 'sim' || recomeçar == 'Sim'){
+            tentativas = 0;
+            jogarNovamente();
         }
-        
-        else {
-            alert(`Tente novamente, o número secreto é maior que ${chute}`);
-            tentativas++;
-        }
+    
+       
+    }
+
+    else if (chute > númeroSecretoFacil) {
+        alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+        tentativas++;
     }
     
+    else {
+        alert(`Tente novamente, o número secreto é maior que ${chute}`);
+        tentativas++;
+    }
+}
 }
 
- //Dificuldade Médio
 
-  else if(dificuldade == 2 || dificuldade == 'media' || dificuldade== 'Media' || dificuldade == 'média' || dificuldade == 'Média'){
+//Dificuldade Médio
+
+else if(dificuldade == 2 || dificuldade == 'media' || dificuldade== 'Media' || dificuldade == 'média' || dificuldade == 'Média'){
+
+alert('Você Selecionou a Dificuldade Média');
+
+console.log(`O número secreto é ${númeroSecretoMedio}`);
+
+while (chute != númeroSecretoMedio) {
+
+    let chute = prompt('Escolha um número de 1 a 50');
+
+    if (chute == númeroSecretoMedio){
+        tentativas++;
+        alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+        let recomeçar = prompt('Deseja jogar Novamente?');
+        if(recomeçar == 'não' || recomeçar == 'Não' || recomeçar == 'nao' || recomeçar == 'Nao'){
+            alert('Obrigado por Jogar');
+            exit();
+        }
+    else if (recomeçar == 'sim' || recomeçar == 'Sim'){
+            tentativas = 0;
+            jogarNovamente();
+        }
     
-    alert('Você Selecionou a Dificuldade Média');
-    console.log(`O número secreto é ${númeroSecretoMedio}`);
+       
+    }
 
-    while (chute != númeroSecretoMedio) {
-
-        let chute = prompt('Escolha um número de 1 a 50');
-
-        if (chute == númeroSecretoMedio){
-            tentativas++;
-            alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
-            break;
-        }
-        else if (chute > númeroSecretoMedio) {
-            alert(`Tente Novamente, o número secreto é menor que ${chute}`);
-            tentativas++;
-        }
-        
-        else {
-            alert(`Tente novamente, o número secreto é maior que ${chute}`);
-            tentativas++;
-        }
+    else if (chute > númeroSecretoFacil) {
+        alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+        tentativas++;
     }
     
+    else {
+        alert(`Tente novamente, o número secreto é maior que ${chute}`);
+        tentativas++;
+    }
+}
 }
 
- //Dificuldade Dificil
+//Dificuldade Dificil
 
- else if(dificuldade == 3 || dificuldade == 'dificil' || dificuldade== 'Dificil' || dificuldade == 'difícil' || dificuldade == 'Difícil'){
+else if(dificuldade == 3 || dificuldade == 'dificil' || dificuldade== 'Dificil' || dificuldade == 'difícil' || dificuldade == 'Difícil'){
+
+alert('Você Selecionou a Dificuldade Difícil');
+console.log(`O número secreto é ${númeroSecretoDificil}`);
+
+while (chute != númeroSecretoDificil) {
+
+    let chute = prompt('Escolha um número de 1 a 100');
+
+    if (chute == númeroSecretoDificil){
+        tentativas++;
+        alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+        let recomeçar = prompt('Deseja jogar Novamente?');
+        if(recomeçar == 'não' || recomeçar == 'Não' || recomeçar == 'nao' || recomeçar == 'Nao'){
+            alert('Obrigado por Jogar');
+            exit();
+        }
+    else if (recomeçar == 'sim' || recomeçar == 'Sim'){
+            tentativas = 0;
+            jogarNovamente();
+        }
     
-    alert('Você Selecionou a Dificuldade Difícil');
-    console.log(`O número secreto é ${númeroSecretoDificil}`);
+       
+    }
 
-    while (chute != númeroSecretoDificil) {
-
-        let chute = prompt('Escolha um número de 1 a 100');
-
-        if (chute == númeroSecretoDificil){
-            tentativas++;
-            alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
-            break;
-        }
-        else if (chute > númeroSecretoDificil) {
-            alert(`Tente Novamente, o número secreto é menor que ${chute}`);
-            tentativas++;
-        }
-        
-        else {
-            alert(`Tente novamente, o número secreto é maior que ${chute}`);
-            tentativas++;
-        }
+    else if (chute > númeroSecretoFacil) {
+        alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+        tentativas++;
     }
     
+    else {
+        alert(`Tente novamente, o número secreto é maior que ${chute}`);
+        tentativas++;
+    }
 }
+}
+        
+
+    }
+    //Declarando váriaveis
+    let chute;
+    let tentativas = 0;
+    let recomeçar = 'sim';
+
+    //Introdução ao Jogo de Advinhação
+    
+alert ('Bem Vindo ao Nosso Jogo de Advinhação');
+
+alert('Escolha a dificuldade do jogo');
+ 
+//Selecionar a Dificuldade
+
+     
+let dificuldade = prompt('1 Facil 2 Média 3 Dificil');
+
+//Dificuldade Facil
+
+if (dificuldade == 1 || dificuldade == 'facil' || dificuldade== 'Facil' || dificuldade == 'fácil' || dificuldade == 'fácil'){
+alert('Você Selecionou a Dificuldade Fácil');
+console.log(`O número secreto é ${númeroSecretoFacil}`);
+
+while (chute != númeroSecretoFacil) {
+
+    let chute = prompt('Escolha um número de 1 a 10');
+
+    if (chute == númeroSecretoFacil){
+        tentativas++;
+        alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+        let recomeçar = prompt('Deseja jogar Novamente?');
+        if(recomeçar == 'não' || recomeçar == 'Não' || recomeçar == 'nao' || recomeçar == 'Nao'){
+            alert('Obrigado por Jogar');
+            exit();
+        }
+    else if (recomeçar == 'sim' || recomeçar == 'Sim'){
+            jogarNovamente();
+        }
+    
+       
+    }
+
+    else if (chute > númeroSecretoFacil) {
+        alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+        tentativas++;
+    }
+    
+    else {
+        alert(`Tente novamente, o número secreto é maior que ${chute}`);
+        tentativas++;
+    }
+}
+}
+
+
+//Dificuldade Médio
+
+else if(dificuldade == 2 || dificuldade == 'media' || dificuldade== 'Media' || dificuldade == 'média' || dificuldade == 'Média'){
+
+alert('Você Selecionou a Dificuldade Média');
+console.log(`O número secreto é ${númeroSecretoMedio}`);
+
+while (chute != númeroSecretoMedio) {
+
+    let chute = prompt('Escolha um número de 1 a 50');
+
+    if (chute == númeroSecretoMedio){
+        tentativas++;
+        alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+        let recomeçar = prompt('Deseja jogar Novamente?');
+        if(recomeçar == 'não' || recomeçar == 'Não' || recomeçar == 'nao' || recomeçar == 'Nao'){
+            alert('Obrigado por Jogar');
+            exit();
+        }
+    else if (recomeçar == 'sim' || recomeçar == 'Sim'){
+            jogarNovamente();
+        }
+    
+       
+    }
+
+    else if (chute > númeroSecretoFacil) {
+        alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+        tentativas++;
+    }
+    
+    else {
+        alert(`Tente novamente, o número secreto é maior que ${chute}`);
+        tentativas++;
+    }
+}
+}
+
+//Dificuldade Dificil
+
+else if(dificuldade == 3 || dificuldade == 'dificil' || dificuldade== 'Dificil' || dificuldade == 'difícil' || dificuldade == 'Difícil'){
+
+alert('Você Selecionou a Dificuldade Difícil');
+console.log(`O número secreto é ${númeroSecretoDificil}`);
+
+while (chute != númeroSecretoDificil) {
+
+    let chute = prompt('Escolha um número de 1 a 100');
+
+    if (chute == númeroSecretoDificil){
+        tentativas++;
+        alert(`Você Acertou em ${tentativas} tentativas, Parabéns!`);
+        let recomeçar = prompt('Deseja jogar Novamente?');
+        if(recomeçar == 'não' || recomeçar == 'Não' || recomeçar == 'nao' || recomeçar == 'Nao'){
+            alert('Obrigado por Jogar');
+            exit();
+        }
+    else if (recomeçar == 'sim' || recomeçar == 'Sim'){
+            jogarNovamente();
+        }
+    
+       
+    }
+
+    else if (chute > númeroSecretoFacil) {
+        alert(`Tente Novamente, o número secreto é menor que ${chute}`);
+        tentativas++;
+    }
+    
+    else {
+        alert(`Tente novamente, o número secreto é maior que ${chute}`);
+        tentativas++;
+    }
+}
+}
+
+
+
+  
 
 
 </script>
